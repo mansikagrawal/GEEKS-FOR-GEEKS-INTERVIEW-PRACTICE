@@ -3,9 +3,12 @@ using namespace std;
 
 int triplet( int arr[], int n)
 {
+	// sort the array
     sort(arr,arr+n);
 
     int count=0;
+	// use two pointer approach to by l and h
+	// assign l and h again until there is a match to all the elemets in the array 
     for(int i=0;i<n;i++)
     {
         int l=0;int h=n-1;
