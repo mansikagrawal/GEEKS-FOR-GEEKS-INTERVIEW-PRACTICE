@@ -43,7 +43,7 @@ return;
 }
 
 void solve(){
-int i,j,k,n,m,;
+int i,j,k,n,m;
 cin>>n>>m;
 for(int i=0;i<m;i++)
 {
