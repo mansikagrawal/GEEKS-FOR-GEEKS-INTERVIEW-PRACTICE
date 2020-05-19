@@ -24,7 +24,7 @@ if(disc[child]==0)
 
     dfs(child,cur);
     no_child++;
-
+    // Minimum time of current node is minimum time of current and child nodes
     low[cur] = min(low[cur], low[child]);
     if( par!=0 and low[child] >=disc[cur])
     {
