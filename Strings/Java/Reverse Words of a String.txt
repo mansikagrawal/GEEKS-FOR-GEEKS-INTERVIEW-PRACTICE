@@ -1,0 +1,48 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+     public static String reverseWord(String input)
+     {
+        String rev="";
+        for(int i=input.length()-1;i>=0;i--)
+        {
+        	 rev+=input.charAt(i);
+        }
+        String ans="";
+        int start=0;
+        for(int i=0;i<rev.length();i++)
+        {
+            if( rev.charAt(i)=='.')
+            {
+                for(int j=i-1;j>=start;j--)
+                {
+                    ans=ans+rev.charAt(j);		
+                }
+                ans+=".";
+                start=i+1;
+            }
+            if( i==rev.length()-1)
+            {
+                for(int j=i;j>=start;j--)
+                {
+                    ans=ans+rev.charAt(j);		
+                }
+            }
+        }
+        return ans;
+     }
+     
+	public static void main (String[] args)
+	 {
+	     Scanner scan = new Scanner(System.in);
+	     int n=scan.nextInt();
+	     while(n-->0)
+	     {
+	         String input=scan.next();
+          	 System.out.println(reverseWord(input));
+	     }
+    	 
+	 }
+}
