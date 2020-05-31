@@ -5,7 +5,7 @@ const int N = 3005;
 int sieve(int n)
 {
 
-    int pr[n+1]={};
+    int pr[n+1]={0};
 
     vector<int> primes;
 
@@ -18,7 +18,7 @@ int sieve(int n)
         {
 
             primes.push_back(i);
-            for(j=i;i<=n;j+=i)
+            for(j=i;j<=n;j+=i)
             {
                 pr[j]++;
             }
