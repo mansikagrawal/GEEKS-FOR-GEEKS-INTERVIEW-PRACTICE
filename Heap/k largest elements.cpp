@@ -1,9 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-
-
 vector<int> kLargest(int arr[], int n, int k)
 {
     // code here
