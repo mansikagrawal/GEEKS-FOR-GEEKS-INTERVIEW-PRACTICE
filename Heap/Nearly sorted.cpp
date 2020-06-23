@@ -8,6 +8,7 @@ using namespace std;
 vector<int> nearlySorted(int arr[], int num, int k)
 {
     // Your code here
+    // Complexity here of this program will be O(k) + O((n-k) * log(k))
     priority_queue<int, vector<int>, greater<int> > p(arr, arr + k);
     vector<int> v;
     while (k < num) {
@@ -17,6 +18,7 @@ vector<int> nearlySorted(int arr[], int num, int k)
 
         k++;
     }
+    /* It is needed to iterate throught the heap again because elements are left after previous insertion */
     while (p.empty() == false) {
         v.push_back(p.top());
         p.pop();
@@ -24,7 +26,6 @@ vector<int> nearlySorted(int arr[], int num, int k)
     return v;
 }
 
-// { Driver Code Starts.
 
 int main()
 {
