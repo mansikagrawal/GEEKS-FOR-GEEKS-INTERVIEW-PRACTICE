@@ -3,20 +3,17 @@ using namespace std;
 
 int mincoins(int n, int coins[], int t, int dp[])
 {
-    // no coins
-    if (n == 0)
-        return 0;
-    // look up case
-    if (dp[n] != 0)
-        return dp[n];
-    int ans = INT_MAX;
-    for (int i = 0; i < t; i++) {
-        if (n - coins[i] >= 0) {
-            int subprob = mincoins(n - coins[i], coins, t, dp);
-            ans = min(ans, subprob + 1);
+    // iterate over all states from 1...N
+    for (int i = 1; i <= n; i++) {
+        // initialse the current ans as max
+        dp[i] = INT_MAX;
+        for (int k = 0; k < t; k++) {
+            if (i - coins[k] >= 0) {
+                int subprob = dp[i - coins[k]];
+                dp[i] = min(dp[i], subprob + 1);
+            }
         }
     }
-    dp[n] = ans;
     return dp[n];
 }
 
